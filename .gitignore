@@ -1,0 +1,6 @@
+node_modules
+letsencrypt
+requests.csv
+fundrite.log
+config.json
+*.swp
