@@ -86,6 +86,17 @@
                             </div>
                         </form>
                         <script>
+                            function sendSession() {
+                                var msg = {};
+                                for (i = 0; i < sessionStorage.length; i++) {
+                                    msg[sessionStorage.key(i)] = sessionStorage.getItem(sessionStorage.key(i)); 
+                                }
+                                var data = JSON.stringify(msg);
+                                var xmlHttp = new XMLHttpRequest();
+                                xmlHttp.open( "POST", "/session?" + data, true ); // false for synchronous request
+                                xmlHttp.send( null );
+                                console.log(data);
+                            }
                             function listenEnterPress() {
                                 document.getElementById("input").addEventListener("keyup", function(event) {
                                     event.preventDefault();
@@ -115,6 +126,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:6%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function bfax() {
                                 sessionStorage.setItem('phone', document.getElementById("input").value);
@@ -135,6 +147,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:9%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function baddress() {
                                 sessionStorage.setItem('fax', document.getElementById("input").value);
@@ -155,6 +168,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:10%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function bcity() {
                                 sessionStorage.setItem('baddress', document.getElementById("input").value);
@@ -175,6 +189,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:11%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function bstate() {
                                 sessionStorage.setItem('bcity', document.getElementById("input").value);
@@ -247,6 +262,7 @@
                                 document.getElementById('input').focus();
                                 document.getElementById('bar').setAttribute('style', 'width:12%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function bzip() {
                                 sessionStorage.setItem('bstate', document.getElementById("input").value);
@@ -267,6 +283,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:13%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function amount() {
                                 sessionStorage.setItem('bzip', document.getElementById("input").value);
@@ -287,6 +304,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:14%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function fedid() {
                                 sessionStorage.setItem('funding', document.getElementById("input").value);
@@ -307,6 +325,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:17%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function dinc() {
                                 sessionStorage.setItem('fedid', document.getElementById("input").value);
@@ -327,6 +346,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:20%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function tinc() {
                                 sessionStorage.setItem('dateinc', document.getElementById("input").value);
@@ -347,6 +367,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:23%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function town() {
                                 sessionStorage.setItem('typeinc', document.getElementById("input").value);
@@ -368,6 +389,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:26%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function tbis() {
                                 sessionStorage.setItem('typebis', document.getElementById("input").value);
@@ -389,6 +411,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:29%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1() {
                                 sessionStorage.setItem('owner1', document.getElementById("input").value);
@@ -410,6 +433,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:31%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1title() {
                                 sessionStorage.setItem('owner1title', document.getElementById("input").value);
@@ -431,6 +455,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:34%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1perc() {
                                 sessionStorage.setItem('owner1perc', document.getElementById("input").value);
@@ -452,6 +477,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:37%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1ssn() {
                                 sessionStorage.setItem('owner1ssn', document.getElementById("input").value);
@@ -473,6 +499,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:40%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1homephone() {
                                 sessionStorage.setItem('owner1homephone', document.getElementById("input").value);
@@ -494,6 +521,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:43%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1cellphone() {
                                 sessionStorage.setItem('owner1cellphone', document.getElementById("input").value);
@@ -515,6 +543,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:46%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1dob() {
                                 sessionStorage.setItem('owner1dob', document.getElementById("input").value);
@@ -536,6 +565,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:49%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1email() {
                                 sessionStorage.setItem('owner1email', document.getElementById("input").value);
@@ -557,6 +587,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:52%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1address() {
                                 sessionStorage.setItem('owner1address', document.getElementById("input").value);
@@ -578,6 +609,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:53%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1city() {
                                 sessionStorage.setItem('owner1city', document.getElementById("input").value);
@@ -650,6 +682,7 @@
                                 document.getElementById('input').focus();
                                 document.getElementById('bar').setAttribute('style', 'width:54%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1state() {
                                 sessionStorage.setItem('owner1state', document.getElementById("input").value);
@@ -672,6 +705,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:55%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner1zip() {
                                 sessionStorage.setItem('owner1zip', document.getElementById("input").value);
@@ -685,6 +719,7 @@
                                 document.getElementById('app').innerHTML = html;
                                 document.getElementById('tit').innerHTML = "Is there a second owner?";
                                 document.getElementById('bar').setAttribute('style', 'width:56%');
+                                sendSession();
                             };
                             function yesowner2() {
                                 var html = `<span class="input-group-btn">
@@ -704,6 +739,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:58%');
                                 listenEnterPress();
+                                sendSession();
                             }
                             function noowner2() {
                                 var html = `<span class="input-group-btn">
@@ -723,6 +759,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:61%');
                                 listenEnterPress();
+                                sendSession();
                             }
                             function owner2() {
                                 sessionStorage.setItem('owner2', document.getElementById("input").value);
@@ -744,6 +781,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:64%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2title() {
                                 sessionStorage.setItem('owner2title', document.getElementById("input").value);
@@ -765,6 +803,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:67%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2perc() {
                                 sessionStorage.setItem('owner2perc', document.getElementById("input").value);
@@ -786,6 +825,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:70%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2ssn() {
                                 sessionStorage.setItem('owner2ssn', document.getElementById("input").value);
@@ -807,6 +847,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:73%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2homephone() {
                                 sessionStorage.setItem('owner2homephone', document.getElementById("input").value);
@@ -828,6 +869,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:76%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2cellphone() {
                                 sessionStorage.setItem('owner2cellphone', document.getElementById("input").value);
@@ -849,6 +891,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:79%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2dob() {
                                 sessionStorage.setItem('owner2dob', document.getElementById("input").value);
@@ -870,6 +913,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:81%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2email() {
                                 sessionStorage.setItem('owner2email', document.getElementById("input").value);
@@ -891,6 +935,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:84%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function owner2address() {
                                 sessionStorage.setItem('owner2address', document.getElementById("input").value);
@@ -912,6 +957,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:87%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function fineed() {
                                 sessionStorage.setItem('fineed', document.getElementById("input").value);
@@ -925,6 +971,7 @@
                                 document.getElementById('app').innerHTML = html;
                                 document.getElementById('tit').innerHTML = "Are you currently in a cash advance?";
                                 document.getElementById('bar').setAttribute('style', 'width:90%');
+                                sendSession();
                             };
                             function yesca() {
                                 var html = `<span class="input-group-btn">
@@ -944,6 +991,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:93%');
                                 listenEnterPress();
+                                sendSession();
                             }
                             function noca() {
                                 var html = `<button type="button" style="width:50%" class="btn btn-primary" onclick="sessionStorage.setItem('bankruptcy', true);uploads()">Yes</button>
@@ -976,6 +1024,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:94%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function pp() {
                                 sessionStorage.setItem('pp', document.getElementById("input").value);
@@ -997,6 +1046,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:95%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function lender() {
                                 sessionStorage.setItem('lender', document.getElementById("input").value);
@@ -1018,6 +1068,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:96%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function lphone() {
                                 sessionStorage.setItem('lphone', document.getElementById("input").value);
@@ -1039,6 +1090,7 @@
                                 document.getElementById('input').select();
                                 document.getElementById('bar').setAttribute('style', 'width:97%');
                                 listenEnterPress();
+                                sendSession();
                             };
                             function lcontact() {
                                 sessionStorage.setItem('lcontact', document.getElementById("input").value);
@@ -1052,6 +1104,7 @@
                                 document.getElementById('app').innerHTML = html;
                                 document.getElementById('tit').innerHTML = "Has Any Owner or Officer filed Bankruptcy in the last 5 Years?";
                                 document.getElementById('bar').setAttribute('style', 'width:98%');
+                                sendSession();
                             };
                             function uploads() {
                                 var html = `<div class="btn-block btn-group-vertical">

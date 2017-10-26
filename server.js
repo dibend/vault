@@ -194,9 +194,13 @@ app.post('/up', function(request, response) {
     response.send('uploaded');
 });
 
+app.post('/session', function(request, response) {
+    console.error(request.query, request.ip + ' ' + new Date());
+    response.send();
+});
+
 app.get('*', function(request, response) {
-    response.status(404);
-    response.sendFile(path.join(__dirname+'/public/404.html'));
+    response.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 http.createServer(function (request, response) {
