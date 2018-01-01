@@ -200,7 +200,7 @@ app.post('/session', function(request, response) {
 });
 
 app.get('*', function(request, response) {
-    response.sendFile(path.join(__dirname+'/public/index.html'));
+    response.redirect('/');
 });
 
 http.createServer(function (request, response) {
